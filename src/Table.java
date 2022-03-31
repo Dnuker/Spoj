@@ -16,13 +16,10 @@ public class Table {
             for (int x = 0; x < splitStr.length; x++) {
                 numbers[x] = splitStr[wartosci - 1];
                 wartosci--;
-                if (x == splitStr.length) {
-                    break;
-                }
             }
-            System.out.println(Arrays.toString(numbers));
-
-
+            for (int i=0; i < splitStr.length;i++ ){
+                System.out.print(numbers[i]+" ");
+            }
         }
     }
 
