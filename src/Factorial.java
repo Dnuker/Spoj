@@ -4,23 +4,27 @@ import java.util.List;
 //https://pl.spoj.com/problems/FCTRL3/
 
 public class Factorial {
+    public static int calculateFactorial(int number) {
+        int result = 1;
+
+        for (int j = 1; j <= number; j++) {
+            result = result * j;
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int testCases = scan.nextInt();
         List<Integer> factorialNumList = new ArrayList();
-
         //for na testcases
-        for (int x = 0; x < testCases; x++) {
-            int factorialnum = scan.nextInt();
-            int result = 1;
-            for (int i = 1; i <= factorialnum; i++) {
-                result = result * i;
-            }
-            factorialNumList.add(result);
+        int testCases = scan.nextInt();
+        for (int i = 0; i < testCases; i++) {
+            int factorialNum = scan.nextInt();
+            int calculatedFactorial = calculateFactorial(factorialNum);
+            factorialNumList.add(calculatedFactorial);
         }
-        int listSize = factorialNumList.size();
-        for (int x = 0; x < listSize; x++) {
-            String resultInString = Integer.toString(factorialNumList.get(x));
+        for (int i = 0; i < factorialNumList.size(); i++) {
+            String resultInString = Integer.toString(factorialNumList.get(i));
             String[] resultInStringSplitted = resultInString.split("");
             int maxLengthOfTable = resultInStringSplitted.length;
             if (maxLengthOfTable < 2) {
@@ -29,7 +33,8 @@ public class Factorial {
                 System.out.println(resultInStringSplitted[maxLengthOfTable - 2] + " " + resultInStringSplitted[maxLengthOfTable - 1]);
             }
         }
-
     }
+
+
 }
 
