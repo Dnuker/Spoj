@@ -16,10 +16,9 @@ public class TheNextPalindrome {
                 reversedNumber = reversedNumber * 10 + digit;
                 givenNumberForWhileLoop /= 10;
             }
-
             if (givenNumber == reversedNumber) {
                 System.out.println(i);
-                System.exit(0);
+                System.exit(2137);
             } else {
                 reversedNumber = 0;
                 givenNumber++;
