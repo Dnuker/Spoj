@@ -169,7 +169,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/TheNextPalindrome.java</url>
-          <line>37</line>
+          <line>39</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
