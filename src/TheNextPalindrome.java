@@ -1,30 +1,31 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Collections;
 import java.util.Arrays;
 //https://www.spoj.com/problems/PALIN/
-//zmien na chary
-//2 podejscie do nazewnictwa
-//wywalic kod do funkcji do funkcji
+
 
 public class TheNextPalindrome {
-   public static String[] splitString(String stringToSplit) {
-                String[] givenNumberSplitted = stringToSplit.split("");
-                return givenNumberSplitted;
+   public static char[] splitString(String stringToSplit) {
+                char[] givenNumberSplittedChar=stringToSplit.toCharArray();
+                return givenNumberSplittedChar;
+    }
+    public static List<Character> reverseNumber(String numberToReverse)
+    {      int length = splitString(numberToReverse).length-1;
 
-    }
-    public static List<String> reverseNumber(int length,String numberToReverse){
-        List<String> numberInString = new ArrayList();
+        List<Character> numberInChar = new ArrayList();
         for (int j = length; j >= 0; j--) {
-            String splittednumber = splitString(numberToReverse)[j];
-            numberInString.add(splittednumber);
+            char splittednumber = splitString(numberToReverse)[j];
+            numberInChar.add(splittednumber);
         }
-        return numberInString;
+        return numberInChar;
     }
-   public static String foldNumber(int lengthOfSplittedArray, List<String> numberInStringList) {
+   public static String foldNumber(List<Character> numberInCharList) {
+       int lengthOfSplittedArray=numberInCharList.size()-1;
        String foldedNumber = "";
        for (int k = 0; k <= lengthOfSplittedArray; k++) {
-           foldedNumber = foldedNumber + numberInStringList.get(k);
+           foldedNumber = foldedNumber + numberInCharList.get(k);
        }
        return foldedNumber;
    }
@@ -38,8 +39,9 @@ public class TheNextPalindrome {
 
             while (true) {
                String givenNumberInString = Integer.toString(givenNumber);
-                int lengthOfSplittedArray = splitString(givenNumberInString).length - 1;
-                int foldedReversedNumber = Integer.parseInt(foldNumber(lengthOfSplittedArray,reverseNumber(lengthOfSplittedArray,givenNumberInString)));
+
+
+                int foldedReversedNumber = Integer.parseInt(foldNumber(reverseNumber(givenNumberInString)));
                 if (givenNumber == foldedReversedNumber) {
                     System.out.println(foldedReversedNumber);
                     break;
