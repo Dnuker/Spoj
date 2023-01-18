@@ -33,8 +33,8 @@ public class PeselCheck {
         int testCaseCount = scan.nextInt();
         for (int i = 0; i < testCaseCount; i++) {
             String pesel = scan.next();
-            int[] disassembledPesel = disassemblePesel(pesel);
-            if (validatePesel(disassembledPesel) == true) {
+
+            if (validatePesel(disassemblePesel(pesel))) {
                 System.out.println("T");
             } else {
                 System.out.println("N");
