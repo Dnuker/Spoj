@@ -3,8 +3,13 @@ import java.util.Scanner;
 import java.util.stream.Stream;
 
 public class PeselCheck {
+    public static int[] disassemblePesel(String pesel) {
+        int[] intArr = Stream.of(pesel.split("")).mapToInt(Integer::parseInt).toArray();
+        return intArr;
+    }
 
-    public static boolean validatePesel(int[] disassembledPesel) {
+    public static boolean validatePesel(String pesel) {
+        int[] disassembledPesel = disassemblePesel(pesel);
         int multipliedByThree = (disassembledPesel[1] * 3) + (disassembledPesel[5] * 3) + (disassembledPesel[9] * 3);
         int multipliedBySeven = (disassembledPesel[2] * 7) + (disassembledPesel[6] * 7);
         int multipliedByNine = (disassembledPesel[3] * 9) + (disassembledPesel[7] * 9);
@@ -22,11 +27,6 @@ public class PeselCheck {
         }
     }
 
-    public static int[] disassemblePesel(String pesel) {
-        int[] intArr = Stream.of(pesel.split("")).mapToInt(Integer::parseInt).toArray();
-        return intArr;
-    }
-
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -34,7 +34,7 @@ public class PeselCheck {
         for (int i = 0; i < testCaseCount; i++) {
             String pesel = scan.next();
 
-            if (validatePesel(disassemblePesel(pesel))) {
+            if (validatePesel(pesel)) {
                 System.out.println("T");
             } else {
                 System.out.println("N");
