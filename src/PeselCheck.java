@@ -1,5 +1,7 @@
 
 import java.util.Scanner;
+import java.util.stream.Stream;
+
 public class PeselCheck {
     public static char[] dissasemblePesel(long pesel) {
        char[] peselInCharArr = Long.toString(pesel).toCharArray();
@@ -25,9 +27,7 @@ public class PeselCheck {
         }
     }
     public static int[] convertToIntArr(String pesel){
-        final int[] intArr = pesel.chars()
-                .map(x -> x - '0')
-                .toArray();
+      int[] intArr = Stream.of(pesel.split("")).mapToInt(Integer::parseInt).toArray();
         return intArr;
     }
 
