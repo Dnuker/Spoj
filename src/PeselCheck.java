@@ -1,6 +1,7 @@
 
 import java.util.Scanner;
 import java.util.stream.Stream;
+//https://pl.spoj.com/problems/JPESEL/
 
 public class PeselCheck {
     public static int[] disassemblePesel(String pesel) {
@@ -9,7 +10,18 @@ public class PeselCheck {
 
     public static boolean validatePesel(String pesel) {
         int[] disassembledPesel = disassemblePesel(pesel);
-        int peselSum = (disassembledPesel[1] * 3) + (disassembledPesel[5] * 3) + (disassembledPesel[9] * 3) + (disassembledPesel[2] * 7) + (disassembledPesel[6] * 7) + (disassembledPesel[3] * 9) + (disassembledPesel[7] * 9) + disassembledPesel[0] + disassembledPesel[4] + disassembledPesel[8] + disassembledPesel[10];
+        int peselSum = (disassembledPesel[1] * 3) +
+                (disassembledPesel[5] * 3) +
+                (disassembledPesel[9] * 3) +
+                (disassembledPesel[2] * 7) +
+                (disassembledPesel[6] * 7) +
+                (disassembledPesel[3] * 9) +
+                (disassembledPesel[7] * 9) +
+                disassembledPesel[0] +
+                disassembledPesel[4] +
+                disassembledPesel[8] +
+                disassembledPesel[10];
+
         return Integer.toString(peselSum).endsWith("0");
     }
 
