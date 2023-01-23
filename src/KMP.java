@@ -9,6 +9,47 @@ public class KMP {
         return stringToConvert.toCharArray();
     }
 
+    public static List<Integer> findPatternPositionString(String pattern, String phrase){
+        List<Integer> patternPosition = new ArrayList();
+        phrase+=" ";
+        for (int i =0 ; i<phrase.length(); i++) {
+            if (i + pattern.length() < phrase.length()) {
+                String phraseSubStr = phrase.substring(i, i + (pattern.length()));
+                if (phraseSubStr.equals(pattern)) {
+                    patternPosition.add(i);
+                }
+            }
+            else{
+                break;
+            }
+        }
+
+        return patternPosition ;
+    }
+
+    public static List<Integer> findPatternPositionPKD(char[] pattern, char[] phrase) {
+        List<Integer> patternPosition = new ArrayList();
+        int next = 0;
+        for(int phI = 0 ; phI < phrase.length ; phI++){
+            for( int paI = 0 ; paI < pattern.length ; paI++){
+                if(phI != phrase.length -1){
+                    if(phrase[phI+next] == pattern[paI]){
+                        if(next == pattern.length){
+                            //dodaj do listy pozycje
+                            patternPosition.add(phI);
+                            next = 0;
+                            break;
+                        }
+                        next ++;
+                    }else{
+                        break;
+                    }
+                }
+            }
+        }
+       return patternPosition;
+    }
+
     public static List<Integer> findPatternPosition(char[] pattern, char[] phrase) {
         int patternLength = pattern.length;
         int phraseLength = phrase.length;
@@ -59,7 +100,8 @@ public class KMP {
             int patternLength = scan.nextInt();
             String pattern = scan.next();
             String textToFindPattern = scan.next();
-            List<Integer> patternPosition = findPatternPosition(convertStringToCharArr(pattern), convertStringToCharArr(textToFindPattern));
+           // List<Integer> patternPosition = findPatternPosition(convertStringToCharArr(pattern), convertStringToCharArr(textToFindPattern));
+            List<Integer> patternPosition = findPatternPositionString(pattern,textToFindPattern);
             printList(patternPosition);
         }
     }
