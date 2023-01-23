@@ -1,4 +1,4 @@
-import java.sql.ClientInfoStatus;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,25 +9,25 @@ public class KMP {
         return stringToConvert.toCharArray();
     }
 
-    public static List<Integer> findPatternPosition(char[] pattern, char[] textToFindPattern) {
-        int lengthOfPattern = pattern.length;
-        int lengthOfTextToFindPattern = textToFindPattern.length;
+    public static List<Integer> findPatternPosition(char[] pattern, char[] phrase) {
+        int patternLength = pattern.length;
+        int phraseLength = phrase.length;
         List<Integer> patternPosition = new ArrayList();
         int iterationNumber = 1;
         int startNumber = 0;
-        for (int i = 0; i < lengthOfTextToFindPattern; i++) {
-            if (textToFindPattern[i] == pattern[0]) {
+        for (int i = 0; i < phraseLength; i++) {
+            if (phrase[i] == pattern[0]) {
 
-                for (int j = 1; j < lengthOfPattern; j++) {
-                    if (i != lengthOfTextToFindPattern - 1) {
+                for (int j = 1; j < patternLength; j++) {
+                    if (i != phraseLength - 1) {
                         i++;
                         if (iterationNumber == 1) {
                             startNumber = i;
                         }
-                        if (textToFindPattern[i] == pattern[j]) {
+                        if (phrase[i] == pattern[j]) {
                             iterationNumber++;
-                            if (iterationNumber == lengthOfPattern) {
-                                patternPosition.add(i - (lengthOfPattern - 1));
+                            if (iterationNumber == patternLength) {
+                                patternPosition.add(i - (patternLength - 1));
                                 iterationNumber = 1;
                                 i = startNumber;
                             }
@@ -47,8 +47,8 @@ public class KMP {
     }
 
     public static void printList(List<Integer> patternPosition) {
-        for (int i = 0; i < patternPosition.size(); i++) {
-            System.out.println(patternPosition.get(i));
+        for (Integer integer : patternPosition) {
+            System.out.println(integer);
         }
     }
 
@@ -61,8 +61,6 @@ public class KMP {
             String textToFindPattern = scan.next();
             List<Integer> patternPosition = findPatternPosition(convertStringToCharArr(pattern), convertStringToCharArr(textToFindPattern));
             printList(patternPosition);
-
-
         }
     }
 }
