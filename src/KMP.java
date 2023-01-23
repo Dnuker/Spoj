@@ -11,20 +11,18 @@ public class KMP {
 
     public static List<Integer> findPatternPositionString(String pattern, String phrase){
         List<Integer> patternPosition = new ArrayList();
-        phrase+=" ";
-        for (int i =0 ; i<phrase.length(); i++) {
+        phrase += " ";
+        for (int i = 0; i < phrase.length(); i++) {
             if (i + pattern.length() < phrase.length()) {
                 String phraseSubStr = phrase.substring(i, i + (pattern.length()));
                 if (phraseSubStr.equals(pattern)) {
                     patternPosition.add(i);
                 }
-            }
-            else{
+            } else {
                 break;
             }
         }
-
-        return patternPosition ;
+        return patternPosition;
     }
 
     public static List<Integer> findPatternPositionPKD(char[] pattern, char[] phrase) {
@@ -106,4 +104,3 @@ public class KMP {
         }
     }
 }
-
