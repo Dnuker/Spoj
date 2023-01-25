@@ -9,18 +9,28 @@ public class KMP {
         return stringToConvert.toCharArray();
     }
 
+
     public static List<Integer> findPatternPositionString(String pattern, String phrase){
         List<Integer> patternPosition = new ArrayList();
-        phrase += " ";
+        //phrase += " ";
         for (int i = 0; i < phrase.length(); i++) {
-            if (i + pattern.length() < phrase.length()) {
+          //  if (i + pattern.length() < phrase.length()) {
                 String phraseSubStr = phrase.substring(i, i + (pattern.length()));
+                int forlater = i+pattern.length();
+                if(i+pattern.length()>=phrase.length()){
+                    phraseSubStr = phrase.substring(i);
+                    if (phraseSubStr.equals(pattern)) {
+                        patternPosition.add(i);
+                        break;
+                    }
+                }
                 if (phraseSubStr.equals(pattern)) {
                     patternPosition.add(i);
-                }
-            } else {
+               }
+           /* }
+            else {
                 break;
-            }
+           }*/
         }
         return patternPosition;
     }

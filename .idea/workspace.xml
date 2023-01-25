@@ -160,6 +160,26 @@
           <line>37</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/KMP.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/KMP.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/KMP.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/KMP.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.util.InputMismatchException" package="java.util" />
           <option name="timeStamp" value="36" />
