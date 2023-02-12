@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
+//https://pl.spoj.com/problems/PRIME1/
 public class PrimeNumberGenerator {
 
   /*  public static List<Integer> dividesByTwoThreeFiveSeven(int endNumber) {
@@ -59,11 +59,14 @@ public class PrimeNumberGenerator {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int startNumber = scan.nextInt();
-        int endNumber = scan.nextInt();
-        List<Integer> listOfDividedNumbers = deletesMultipliedNumbers(endNumber);
-        List<Integer> listOfPrimeNumbers = takeCompartmentOfNumbers(listOfDividedNumbers, startNumber);
-        System.out.print(listOfPrimeNumbers);
+        int testCaseCount = scan.nextInt();
+        for (int i = 0; i < testCaseCount; i++) {
+            int startNumber = scan.nextInt();
+            int endNumber = scan.nextInt();
+            List<Integer> listOfDividedNumbers = deletesMultipliedNumbers(endNumber);
+            List<Integer> listOfPrimeNumbers = takeCompartmentOfNumbers(listOfDividedNumbers, startNumber);
+            System.out.print(listOfPrimeNumbers);
+        }
     }
 
 }
