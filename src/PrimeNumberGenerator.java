@@ -22,7 +22,7 @@ public class PrimeNumberGenerator {
         return primeNumbers;
     }
 
-    public static List<Integer> primeNumbersInRange(List<Integer> listOfNumbers, int startNumber) {
+    public static List<Integer> rangePrimeNumbers(List<Integer> listOfNumbers, int startNumber) {
         int sizeOfList = listOfNumbers.size();
         for (int i = 0; i < sizeOfList; i++) {
             if (listOfNumbers.get(0) < startNumber) {
@@ -39,7 +39,7 @@ public class PrimeNumberGenerator {
             int startNumber = scan.nextInt();
             int endNumber = scan.nextInt();
             List<Integer> primeNumbers = findPrimeNumbers(endNumber);
-            List<Integer> primeNumbersInRange = primeNumbersInRange(primeNumbers, startNumber);
+            List<Integer> primeNumbersInRange = rangePrimeNumbers(primeNumbers, startNumber);
             System.out.print(primeNumbersInRange);
         }
     }
