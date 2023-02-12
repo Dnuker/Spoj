@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class PrimeNumberGenerator {
 
-    public static List<Integer> dividesByTwoThreeFiveSeven(int endNumber) {
+  /*  public static List<Integer> dividesByTwoThreeFiveSeven(int endNumber) {
         List<Integer> listOfDividedNumbers = new ArrayList();
         int startNumber = 2;
         if (startNumber <= 7) {
@@ -29,9 +29,14 @@ public class PrimeNumberGenerator {
             }
         }
         return listOfDividedNumbers;
-    }
+    }*/
 
-    public static List<Integer> deletesMultipliedNumbers(List<Integer> listOfDividedNumbers, int endNumber) {
+    public static List<Integer> deletesMultipliedNumbers(int endNumber) {
+        List<Integer> listOfDividedNumbers = new ArrayList();
+        for(int number = 2;number<=endNumber;number++){
+            listOfDividedNumbers.add(number);
+        }
+        //List<Integer> justForCheck = listOfDividedNumbers;
         int numberMultiplied = 0;
         for (int i = 2; i < endNumber; i++) {
             for (int j = 2; j < Math.sqrt(endNumber); j++) {
@@ -56,7 +61,7 @@ public class PrimeNumberGenerator {
         Scanner scan = new Scanner(System.in);
         int startNumber = scan.nextInt();
         int endNumber = scan.nextInt();
-        List<Integer> listOfDividedNumbers = deletesMultipliedNumbers(dividesByTwoThreeFiveSeven(endNumber), endNumber);
+        List<Integer> listOfDividedNumbers = deletesMultipliedNumbers(endNumber);
         List<Integer> listOfPrimeNumbers = takeCompartmentOfNumbers(listOfDividedNumbers, startNumber);
         System.out.print(listOfPrimeNumbers);
     }
