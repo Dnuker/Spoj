@@ -22,7 +22,7 @@ public class PrimeNumberGenerator {
         return primeNumbersAsBoolean;
     }
 
-    public static List<Integer> convertsBooleanListToIntAndTakesRange(List<Boolean> primeNumbersAsBoolean, int startNumber) {
+    public static List<Integer> convertsBooleanListToInt(List<Boolean> primeNumbersAsBoolean, int startNumber) {
         List<Integer> primeNumbers = new ArrayList();
         for (int i = 0; i < primeNumbersAsBoolean.size(); i++) {
             if (primeNumbersAsBoolean.get(i)) {
@@ -65,7 +65,7 @@ public class PrimeNumberGenerator {
             int startNumber = scan.nextInt();
             int endNumber = scan.nextInt();
             List<Boolean> primeNumbersAsBoolean = findPrimeNumbersAsBoolean(endNumber);
-            List<Integer> primeNumbersAsInt = convertsBooleanListToIntAndTakesRange(primeNumbersAsBoolean, startNumber);
+            List<Integer> primeNumbersAsInt = convertsBooleanListToInt(primeNumbersAsBoolean, startNumber);
          /*   List<Integer> primeNumbers = findPrimeNumbers(endNumber);
             List<Integer> primeNumbersInRange = rangePrimeNumbers(primeNumbers, startNumber);*/
             System.out.print(rangePrimeNumbers(primeNumbersAsInt, startNumber));
