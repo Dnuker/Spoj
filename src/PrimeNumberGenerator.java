@@ -4,34 +4,33 @@ import java.util.Scanner;
 
 //https://pl.spoj.com/problems/PRIME1/
 public class PrimeNumberGenerator {
-  public static List<Boolean> findPrimeNumbersAsBoolean(int endNumber){
-      List<Boolean> primeNumbersAsBoolean = new ArrayList();
-      for (int number= 2;number<=endNumber;number++){
-          primeNumbersAsBoolean.add(true);
-      }
-      int numberMultiplied = 0;
-      for (int i = 2; i < endNumber; i++) {
-          for (int j = 2; j < Math.sqrt(endNumber); j++) {
-              numberMultiplied = (i * j)-2;
-              if(numberMultiplied>primeNumbersAsBoolean.size()-1){
-                  break;
-              }
-              primeNumbersAsBoolean.set(numberMultiplied, false);
-          }
-      }
-      return primeNumbersAsBoolean;
-  }
+    public static List<Boolean> findPrimeNumbersAsBoolean(int endNumber) {
+        List<Boolean> primeNumbersAsBoolean = new ArrayList();
+        for (int number = 2; number <= endNumber; number++) {
+            primeNumbersAsBoolean.add(true);
+        }
+        int numberMultiplied = 0;
+        for (int i = 2; i < endNumber; i++) {
+            for (int j = 2; j < Math.sqrt(endNumber); j++) {
+                numberMultiplied = (i * j) - 2;
+                if (numberMultiplied > primeNumbersAsBoolean.size() - 1) {
+                    break;
+                }
+                primeNumbersAsBoolean.set(numberMultiplied, false);
+            }
+        }
+        return primeNumbersAsBoolean;
+    }
 
-  public static List<Integer> convertsBooleanListToIntAndTakesRange(List<Boolean> primeNumbersAsBoolean,int startNumber){
-      List<Integer> primeNumbers = new ArrayList();
-      for(int i=0;i<primeNumbersAsBoolean.size();i++){
-            int numberToAddIfInRange = i+2;
-          if(primeNumbersAsBoolean.get(i)==true&& startNumber<=numberToAddIfInRange){
-              primeNumbers.add(i+2);
-          }
-      }
-      return primeNumbers;
-  }
+    public static List<Integer> convertsBooleanListToIntAndTakesRange(List<Boolean> primeNumbersAsBoolean, int startNumber) {
+        List<Integer> primeNumbers = new ArrayList();
+        for (int i = 0; i < primeNumbersAsBoolean.size(); i++) {
+            if (primeNumbersAsBoolean.get(i)) {
+                primeNumbers.add(i + 2);
+            }
+        }
+        return primeNumbers;
+    }
 
     public static List<Integer> findPrimeNumbers(int endNumber) {
         List<Integer> primeNumbers = new ArrayList();
@@ -66,11 +65,10 @@ public class PrimeNumberGenerator {
             int startNumber = scan.nextInt();
             int endNumber = scan.nextInt();
             List<Boolean> primeNumbersAsBoolean = findPrimeNumbersAsBoolean(endNumber);
-            List<Integer> primeNumbersInRange = convertsBooleanListToIntAndTakesRange(primeNumbersAsBoolean,startNumber);
-
+            List<Integer> primeNumbersAsInt = convertsBooleanListToIntAndTakesRange(primeNumbersAsBoolean, startNumber);
          /*   List<Integer> primeNumbers = findPrimeNumbers(endNumber);
             List<Integer> primeNumbersInRange = rangePrimeNumbers(primeNumbers, startNumber);*/
-            System.out.print(primeNumbersInRange);
+            System.out.print(rangePrimeNumbers(primeNumbersAsInt, startNumber));
         }
     }
 }
