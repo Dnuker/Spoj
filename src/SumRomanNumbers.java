@@ -55,58 +55,63 @@ public class SumRomanNumbers {
 
     public static String translateArabicNumberToRoman(int arabicNumber) {
 
-        String romanNumber = null;
-        if (arabicNumber >= 1000) {
-            romanNumber = romanNumber + "M";
-            arabicNumber = arabicNumber - 1000;
-        }
-        if (arabicNumber >= 900) {
-            romanNumber = romanNumber + "CM";
-            arabicNumber = arabicNumber - 900;
-        }
-        if (arabicNumber >= 500) {
-            romanNumber = romanNumber + "D";
-            arabicNumber = arabicNumber - 500;
-        }
-        if (arabicNumber >= 400) {
-            romanNumber = romanNumber + "CD";
-            arabicNumber = arabicNumber - 400;
-        }
-        if (arabicNumber >= 100) {
-            romanNumber = romanNumber + "C";
-            arabicNumber = arabicNumber - 100;
-        }
-        if (arabicNumber >= 90) {
-            romanNumber = romanNumber + "XC";
-            arabicNumber = arabicNumber - 90;
-        }
-        if (arabicNumber >= 50) {
-            romanNumber = romanNumber + "L";
-            arabicNumber = arabicNumber - 50;
-        }
-        if (arabicNumber >= 40) {
-            romanNumber = romanNumber + "XL";
-            arabicNumber = arabicNumber - 40;
-        }
-        if (arabicNumber >= 10) {
-            romanNumber = romanNumber + "X";
-            arabicNumber = arabicNumber - 10;
-        }
-        if (arabicNumber >= 9) {
-            romanNumber = romanNumber + "IX";
-            arabicNumber = arabicNumber - 9;
-        }
-        if (arabicNumber >= 5) {
-            romanNumber = romanNumber + "V";
-            arabicNumber = arabicNumber - 5;
-        }
-        if (arabicNumber >= 4) {
-            romanNumber = romanNumber + "IV";
-            arabicNumber = arabicNumber - 4;
-        }
-        if (arabicNumber >= 1) {
-            romanNumber = romanNumber + "I";
-            arabicNumber = arabicNumber - 1;
+        String romanNumber = "";
+        while (true) {
+            if (arabicNumber >= 1000) {
+                romanNumber = romanNumber + "M";
+                arabicNumber = arabicNumber - 1000;
+            }
+            if (arabicNumber >= 900 && arabicNumber < 1000) {
+                romanNumber = romanNumber + "CM";
+                arabicNumber = arabicNumber - 900;
+            }
+            if (arabicNumber >= 500 && arabicNumber < 900) {
+                romanNumber = romanNumber + "D";
+                arabicNumber = arabicNumber - 500;
+            }
+            if (arabicNumber >= 400 && arabicNumber < 500) {
+                romanNumber = romanNumber + "CD";
+                arabicNumber = arabicNumber - 400;
+            }
+            if (arabicNumber >= 100 && arabicNumber < 400) {
+                romanNumber = romanNumber + "C";
+                arabicNumber = arabicNumber - 100;
+            }
+            if (arabicNumber >= 90 && arabicNumber < 100) {
+                romanNumber = romanNumber + "XC";
+                arabicNumber = arabicNumber - 90;
+            }
+            if (arabicNumber >= 50 && arabicNumber < 90) {
+                romanNumber = romanNumber + "L";
+                arabicNumber = arabicNumber - 50;
+            }
+            if (arabicNumber >= 40 && arabicNumber < 50) {
+                romanNumber = romanNumber + "XL";
+                arabicNumber = arabicNumber - 40;
+            }
+            if (arabicNumber >= 10 && arabicNumber < 40) {
+                romanNumber = romanNumber + "X";
+                arabicNumber = arabicNumber - 10;
+            }
+            if (arabicNumber >= 9 && arabicNumber < 10) {
+                romanNumber = romanNumber + "IX";
+                arabicNumber = arabicNumber - 9;
+            }
+            if (arabicNumber >= 5 && arabicNumber < 9) {
+                romanNumber = romanNumber + "V";
+                arabicNumber = arabicNumber - 5;
+            }
+            if (arabicNumber >= 4 && arabicNumber < 5) {
+                romanNumber = romanNumber + "IV";
+                arabicNumber = arabicNumber - 4;
+            }
+            if (arabicNumber >= 1 && arabicNumber < 4) {
+                romanNumber = romanNumber + "I";
+                arabicNumber = arabicNumber - 1;
+            }
+            if (arabicNumber == 0) {
+                break;
+            }
         }
         return romanNumber;
     }
@@ -118,6 +123,6 @@ public class SumRomanNumbers {
         int sumOfNumbers = translatesRomanNumberToArabic(convertStringToIntList(firstNumber)) + translatesRomanNumberToArabic(convertStringToIntList(secondNumber));
 
 
-        System.out.println(sumOfNumbers);
+        System.out.println(translateArabicNumberToRoman(sumOfNumbers));
     }
 }
