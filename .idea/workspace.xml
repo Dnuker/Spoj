@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03e4e8af-dc58-4e82-884c-4ba77d5358b8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shelf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SumRomanNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SumRomanNumbers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +45,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.SumRomanNumbers">
+  <component name="RunManager" selected="Application.Library">
     <configuration name="KMP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="KMP" />
       <module name="Spoj" />
@@ -52,8 +53,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PeselCheck" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PeselCheck" />
+    <configuration name="Library" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Library" />
       <module name="Spoj" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -82,11 +83,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Library" />
         <item itemvalue="Application.SumRomanNumbers" />
         <item itemvalue="Application.SumRomanNumbersChatGpt" />
         <item itemvalue="Application.PrimeNumberGenerator" />
         <item itemvalue="Application.KMP" />
-        <item itemvalue="Application.PeselCheck" />
       </list>
     </recent_temporary>
   </component>
@@ -159,6 +160,11 @@
           <url>file://$PROJECT_DIR$/src/TheNextPalindrome.java</url>
           <line>37</line>
           <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Shelf.java</url>
+          <line>4</line>
+          <option name="timeStamp" value="65" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.util.InputMismatchException" package="java.util" />
