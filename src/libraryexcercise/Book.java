@@ -1,16 +1,18 @@
-import java.util.List;
-import java.util.Scanner;
+package libraryexcercise;
+
 class Book {
     String title;
     String author;
     int releaseDate;
     String genre;
+
     public Book(String title,String author, int releaseDate, String genre){
         this.title = title;
         this.author = author;
         this.releaseDate = releaseDate;
         this.genre = genre;
     }
+    @Override
     public String toString() {
         return "Title: " + title + "\n" +
                 "Author: " + author + "\n" +
