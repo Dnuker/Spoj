@@ -20,5 +20,8 @@ public class Shelf {
         }
         return sb.toString();
     }
+    public void addsBook(Book bookName){
+    books.add(bookName);
+    }
 }
 

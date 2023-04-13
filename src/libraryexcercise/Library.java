@@ -7,8 +7,9 @@ public class Library {
     String name;
     List<Shelf> shelves = new ArrayList<Shelf>();
 
-    public Library(String name) {
+    public Library(String name, List<Shelf> shelves) {
         this.name = name;
+        this.shelves = shelves;
     }
     @Override
     public String toString(){
@@ -17,16 +18,19 @@ public class Library {
         sb.append(shelves.toString());
         return sb.toString();
     }
-    String findByAuthor(String author){
-        StringBuilder sb = new StringBuilder();
+    List<Book> findByAuthor(String author){
+        List<Book> findByAuthor=new ArrayList<>();
         System.out.println("Books of chosen author:\n");
-        for (libraryexcercise.Shelf shelf: shelves){
-            for(libraryexcercise.Book book: shelf.books){
+        for (Shelf shelf: shelves){
+            for(Book book: shelf.books){
                 if (author.equals(book.author)){
-                    sb.append(book.toString());
+                    findByAuthor.add(book);
                 }
             }
         }
-        return sb.toString();
+        return findByAuthor;
+    }
+    public void addsShelf(Shelf shelfName){
+        shelves.add(shelfName);
     }
 }
