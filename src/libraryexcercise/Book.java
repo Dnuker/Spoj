@@ -1,27 +1,31 @@
 package libraryexcercise;
 
-import static jdk.internal.org.jline.reader.LineReader.SuggestionType.HISTORY;
-
 class Book {
     String title;
+    static int idCounter = 1;
     String author;
     int releaseDate;
-    genre genre;
+    Genre genre;
+    //zmienic status tak aby znajdował sie w library
+    //String stauts = "available";
+    int id;
 
-    //zmien genre z string na enum
-    public Book(String title,String author, int releaseDate, genre genre){
+    public Book(String title, String author, int releaseDate, Genre genre) {
         this.title = title;
         this.author = author;
         this.releaseDate = releaseDate;
         this.genre = genre;
+        this.id = idCounter;
+        idCounter++;
     }
+    //to tutaj jest wykorzystywany
     @Override
     public String toString() {
         return "Title: " + title + "\n" +
                 "Author: " + author + "\n" +
                 "Publication year: " + releaseDate + "\n" +
-                "Genre: " + genre+ "\n\n";
+                "Genre: " + genre + "\n" +
+                "ID: " + id + "\n\n";
     }
-
 }
 
