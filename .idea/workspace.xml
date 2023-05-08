@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03e4e8af-dc58-4e82-884c-4ba77d5358b8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/libraryexcercise/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/libraryexcercise/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryexcercise/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/libraryexcercise/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryexcercise/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libraryexcercise/LibraryExcercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryexcercise/libraryExcercise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libraryexcercise/Shelf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryexcercise/Shelf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libraryexcercise/genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryexcercise/Genre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libraryexcercise/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryexcercise/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libraryexcercise/libraryExcercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryexcercise/libraryExcercise.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,8 +61,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PrimeNumberGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PrimeNumberGenerator" />
+    <configuration name="LifeUniverseandEverything" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LifeUniverseandEverything" />
       <module name="Spoj" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -100,10 +98,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.libraryExcercise" />
+        <item itemvalue="Application.LifeUniverseandEverything" />
         <item itemvalue="Application.Library" />
         <item itemvalue="Application.SumRomanNumbers" />
         <item itemvalue="Application.SumRomanNumbersChatGpt" />
-        <item itemvalue="Application.PrimeNumberGenerator" />
       </list>
     </recent_temporary>
   </component>
@@ -176,6 +174,26 @@
           <url>file://$PROJECT_DIR$/src/TheNextPalindrome.java</url>
           <line>37</line>
           <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/libraryexcercise/Library.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/libraryexcercise/Library.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/libraryexcercise/Library.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/libraryexcercise/Library.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="70" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.util.InputMismatchException" package="java.util" />

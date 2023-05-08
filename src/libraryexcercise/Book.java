@@ -6,8 +6,6 @@ class Book {
     String author;
     int releaseDate;
     Genre genre;
-    //zmienic status tak aby znajdował sie w library
-    //String stauts = "available";
     int id;
 
     public Book(String title, String author, int releaseDate, Genre genre) {
@@ -18,7 +16,7 @@ class Book {
         this.id = idCounter;
         idCounter++;
     }
-    //to tutaj jest wykorzystywany
+
     @Override
     public String toString() {
         return "Title: " + title + "\n" +
