@@ -16,14 +16,7 @@ public class User {
     }
 
     // czy tutaj jest dobrze wykorzystany static (imo chyba ta bo ten kod ma się nie odwoływać bezpośrednio do jakiegoś usera)
-    public static User getUserById(int userId, List<User> listOfUsers) {
-        for (User user : listOfUsers) {
-            if (userId == user.id) {
-                return user;
-            }
-        }
-        return null;
-    }
+
 
     @Override
     public String toString() {

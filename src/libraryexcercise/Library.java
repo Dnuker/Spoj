@@ -1,26 +1,17 @@
 package libraryexcercise;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class Library {
     String name;
     List<Shelf> shelves;
-    List<Status> statusOfBooks;
     List<User> listOfUsers;
-    Map<User, List<Book>> userHasBookMap = new HashMap<>();
+    Map<Integer, List<Book>> userHasBookMap = new HashMap<>();
 
     public Library(String name, List<Shelf> shelves, List<User> listOfUsers) {
         this.name = name;
         this.shelves = shelves;
-     /*   for (Shelf shelf:shelves) {
-            for (Book book:shelf.books){
-                statusOfBooks.add(Status.AVAILABLE);
-            }
-        }*/
         this.listOfUsers = listOfUsers;
     }
 
@@ -36,17 +27,50 @@ public class Library {
         }
         return foundBooks;
     }
+    public User getUserById(int userId) {
+        for (User user : listOfUsers) {
+            if (userId == user.id) {
+                return user;
+            }
+        }
+        return null;
+    }
 
     public void addsShelf(Shelf shelfName) {
         shelves.add(shelfName);
     }
 
-    public Map<User, List<Book>> lendsBook(int userId, List<Book> booksToLend) {
-        userHasBookMap.put(User.getUserById(userId, listOfUsers), booksToLend);
+    public Map<Integer, List<Book>> lendsBook(int userId, List<Book> booksToLend) {
+        userHasBookMap.put(userId, booksToLend);
         return userHasBookMap;
     }
+    //nazwa do zmiany
+    public List<Book> availableBooks() {
+        List<Book> availableBooks = new ArrayList<>();
+        //dodaje wszystkie książki do listy
+        for (Shelf shelf : shelves) {
+            for (Book book : shelf.books){
+                availableBooks.add(book);
+            }
+        }
+        return availableBooks;
+    }
+    public List<Book> availableBooks(Map<Integer,List<Book>> mapWithBooksToLend) {
+        List<Book> availableBooks = new ArrayList<>();
+        //dodaje wszystkie książki do listy
+        for (Shelf shelf : shelves) {
+            for (Book book : shelf.books){
+            availableBooks.add(book);
+            }
+        }
+        for (Map.Entry<Integer,List<Book>> value : mapWithBooksToLend.entrySet()) {
+            List<Book> unavailableBooks = value.getValue();
+            availableBooks.removeAll(unavailableBooks);
+        }
+        return availableBooks;
+    }
 
-    @Override
+   @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(name).append("\n\n");
