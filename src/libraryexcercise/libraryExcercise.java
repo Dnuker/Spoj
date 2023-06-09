@@ -55,10 +55,9 @@ public class libraryExcercise {
         library1.lendsBook(1, booksToLend);
         library1.lendsBook(2, booksToLend1);
 
-        if(library1.lendsBook(3,book5)){
+        if (library1.lendsBook(3, book5)) {
             System.out.println("The book is unavailable");
-        }
-        else{
+        } else {
             System.out.println("You just lend the book");
         }
         // library1.availableBooks();
