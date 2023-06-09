@@ -2,11 +2,10 @@ package libraryexcercise;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class libraryExcercise {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         List<Shelf> shelves1 = new ArrayList<Shelf>();
         Shelf shelf1 = new Shelf("ShelfA");
         Shelf shelf2 = new Shelf("ShelfB");
@@ -26,8 +25,10 @@ public class libraryExcercise {
 
         User user1 = new User("Robert", "Mac");
         User user2 = new User("Random", "User");
+        User user3 = new User("Paweł", "Macionk");
         listOfUsers.add(user1);
         listOfUsers.add(user2);
+        listOfUsers.add(user3);
 
         shelf1.addsBook(book1);
         shelf1.addsBook(book2);
@@ -40,26 +41,38 @@ public class libraryExcercise {
         shelf2.addsBook(book8);
         shelf2.addsBook(book9);
         shelf2.addsBook(book10);
-
-        Library library1 = new Library("Biblioteka Subkowska", shelves1, listOfUsers);
-        library1.addsShelf(shelf1);
-        library1.addsShelf(shelf2);
-        Library library2 = new Library("Biblioteka Czczewska", shelves1, listOfUsers2);
         List<Book> booksToLend = new ArrayList<>();
         booksToLend.add(book4);
         booksToLend.add(book2);
         booksToLend.add(book3);
+        List<Book> booksToLend1 = new ArrayList<>();
+        booksToLend1.add(book1);
+        booksToLend1.add(book2);
+        booksToLend1.add(book3);
+        Library library1 = new Library("Biblioteka Subkowska", shelves1, listOfUsers);
+        library1.addsShelf(shelf1);
+        library1.addsShelf(shelf2);
+        library1.lendsBook(1, booksToLend);
+        library1.lendsBook(2, booksToLend1);
 
-        library1.lendsBook(2, booksToLend);
-        library2.lendsBook(1, booksToLend);
+        if(library1.lendsBook(3,book5)){
+            System.out.println("The book is unavailable");
+        }
+        else{
+            System.out.println("You just lend the book");
+        }
+        // library1.availableBooks();
+        Library library2 = new Library("Biblioteka Czczefska", shelves1, listOfUsers2);
+
         System.out.println(library1);
         System.out.println(library1.findByAuthor("George Orwell"));
-        for (Map.Entry<Integer, List<Book>> entry : library1.lendsBook(1, booksToLend).entrySet()) {
+    /*    for (Map.Entry<Integer, List<Book>> entry : library1.lendsBook(1, booksToLend).entrySet()) {
             Integer key = entry.getKey();
             List<Book> userList = entry.getValue();          // Do something with the key and value     System.out.println("Key: " + key + " Value: " + userList);
             System.out.println(library1.getUserById(key));
             System.out.println(userList);
-        }
-        System.out.println(library1.availableBooks(library1.lendsBook(2, booksToLend)));
+        }*/
+        System.out.println(library1.listOfAvailableBooks());
+
     }
 }

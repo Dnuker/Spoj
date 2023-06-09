@@ -15,9 +15,6 @@ public class User {
         idCounter++;
     }
 
-    // czy tutaj jest dobrze wykorzystany static (imo chyba ta bo ten kod ma się nie odwoływać bezpośrednio do jakiegoś usera)
-
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
