@@ -4,8 +4,6 @@
     <list default="true" id="03e4e8af-dc58-4e82-884c-4ba77d5358b8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/libraryexcercise/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryexcercise/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libraryexcercise/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryexcercise/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libraryexcercise/libraryExcercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryexcercise/libraryExcercise.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,16 +178,6 @@
           <line>37</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/libraryexcercise/Library.java</url>
-          <line>126</line>
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/libraryexcercise/Library.java</url>
-          <line>87</line>
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.util.InputMismatchException" package="java.util" />
           <option name="timeStamp" value="36" />
@@ -198,15 +186,6 @@
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="63" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/libraryexcercise/Library.java</url>
-          <line>73</line>
-          <properties class="libraryexcercise.Library" method="lendsBook">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

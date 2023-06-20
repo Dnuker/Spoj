@@ -56,9 +56,9 @@ public class libraryExcercise {
         library1.lendsBook(2, booksToLend1);
 
         if (library1.lendsBook(3, book5)) {
-            System.out.println("The book is unavailable");
-        } else {
             System.out.println("You just lend the book");
+        } else {
+            System.out.println("The book is unavailable");
         }
         // library1.availableBooks();
         Library library2 = new Library("Biblioteka Czczefska", shelves1, listOfUsers2);

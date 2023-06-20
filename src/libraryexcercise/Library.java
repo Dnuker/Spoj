@@ -41,19 +41,14 @@ public class Library {
         shelves.add(shelfName);
     }
 
-    //ma zwracajc liste ksiązek których nie udało się wypożyczyc i przetestowac
-    //ta funkcja dziala
+    //ma zwracajc liste ksiązek których nie udało się wypożyczyc
     public List<Book> lendsBook(int userId, List<Book> booksToLend) {
         List<Book> notAvailableBooks = new ArrayList<>();
         List<Book> booksToLendDuplicated = new ArrayList<>();
-        for (Book book : booksToLend) {
-            booksToLendDuplicated.add(book);
-        }
+        booksToLendDuplicated.addAll(booksToLend);
         for (int key : userHasBookMap.keySet()) {
             for (List<Book> listOfBooks : userHasBookMap.values()) {
                 for (Book book : listOfBooks) {
-            /*List<Book> values = userHasBookMap.get(key);
-            for (Book book : values) {*/
                     for (Book book1 : booksToLend)
                         if (book == book1) {
                             notAvailableBooks.add(book);
@@ -63,10 +58,6 @@ public class Library {
             }
         }
         userHasBookMap.put(userId, booksToLendDuplicated);
-        if (!notAvailableBooks.isEmpty()) {
-            System.out.println("These books are unavailable:");
-            System.out.println(notAvailableBooks);
-        }
         return notAvailableBooks;
     }
 
@@ -74,10 +65,8 @@ public class Library {
     public boolean lendsBook(int userId, Book bookToLend) {
         for (int key : userHasBookMap.keySet()) {
             for (List<Book> listOfBooks : userHasBookMap.values()) {
-                for (Book book : listOfBooks) {
-                    if (book == bookToLend) {
-                        return true;
-                    }
+                if (listOfBooks.contains(bookToLend)) {
+                    return false;
                 }
             }
         }
@@ -85,7 +74,7 @@ public class Library {
         //musi byc jako lista bo mapa przyjmuje tylko listy ksiazek
         bookToLendAsList.add(bookToLend);
         userHasBookMap.put(userId, bookToLendAsList);
-        return false;
+        return true;
 
     }
     //nazwa do zmiany
